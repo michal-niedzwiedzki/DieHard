@@ -160,12 +160,16 @@ Building with `-DBUILD_SCALABLE=ON` enables a scalable design that:
 **Performance**: The scalable mode provides significant speedups for multi-threaded
 workloads:
 
-| Threads | Non-scalable | Scalable | Speedup |
+| Threads | Non_scalable | Scalable | Speedup |
 |---------|--------------|----------|---------|
 | 1       | 0.23s        | 0.21s    | 1.1x    |
 | 2       | 0.40s        | 0.10s    | 4.0x    |
 | 4       | 0.56s        | 0.05s    | 11.2x   |
 | 8       | 0.53s        | 0.06s    | 8.8x    |
+
+```vmark #scalable
+Speedup = ROUND(Non_scalable / Scalable, 1)
+```
 
 *(threadtest benchmark: 50 iterations, 30000 objects, 64-byte allocations)*
 
